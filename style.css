@@ -1,9 +1,9 @@
 :root {
   --bg-dark: #191919;       
-  --card-bg: #0B1A12;       /* Deep Velvet Emerald canvas instead of brown, teal, or red */
+  --card-bg: #0B1A12;       /* Deep Velvet Emerald canvas */
   --accent-gold: #D4B26F;   /* Antique metallic gold trim */
-  --muted-sage: #5A7A68;    /* Muted Renaissance sage for labels and dividing ornaments */
-  --text-parchment: #ECE6DC; /* Distressed marble white text color */
+  --muted-sage: #5A7A68;    /* Muted Renaissance sage */
+  --text-parchment: #ECE6DC; /* Distressed marble text color */
 }
 
 * {
@@ -29,7 +29,7 @@ html, body {
   max-width: 100vw;
   max-height: 100vh;
   padding: 12px;
-  container-type: inline-size; /* Controls fluid responsive size metrics */
+  container-type: inline-size; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +42,7 @@ html, body {
   background-color: var(--card-bg) !important;
   border: 1px solid rgba(212, 178, 111, 0.25); 
   border-radius: 16px;
-  padding: 5cqh 4cqw;
+  padding: 4cqh 3cqw;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
@@ -63,7 +63,7 @@ html, body {
 .corner {
   position: absolute;
   font-family: 'Cinzel', serif;
-  font-size: clamp(8px, 2.5cqw, 14px);
+  font-size: clamp(8px, 2.2cqw, 13px);
   color: var(--accent-gold);
   opacity: 0.4;
   user-select: none;
@@ -88,13 +88,13 @@ html, body {
   letter-spacing: 0.1em;
 }
 
-/* Four-Column Variable Grid Matrix */
+/* Base layout: 6 columns for widescreen banner presentation templates */
 .countdown-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   width: 100%;
-  max-width: 95%;
-  gap: 2cqw;
+  max-width: 98%;
+  gap: 1.5cqw;
 }
 
 .grid-item {
@@ -102,17 +102,17 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1vh 0;
+  padding: 0.5vh 0;
   border-right: 1px solid rgba(90, 122, 104, 0.2);
 }
 
 .grid-item:last-child {
-  border-right: none; /* Strip out border lines on the last item block */
+  border-right: none; 
 }
 
 .grid-item span {
   font-family: 'Cinzel', serif;
-  font-size: clamp(20px, 11cqh, 64px);
+  font-size: clamp(16px, 11cqh, 54px);
   font-weight: 500;
   color: var(--text-parchment);
   line-height: 1.1;
@@ -120,9 +120,9 @@ html, body {
 
 .grid-item label {
   font-family: 'Cinzel', serif;
-  font-size: clamp(7px, 2.2cqw, 11px);
+  font-size: clamp(6px, 1.8cqw, 9px);
   color: var(--muted-sage);
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   font-weight: 600;
   margin-top: 0.5vh;
 }
@@ -143,13 +143,23 @@ html, body {
   max-width: 90%;
 }
 
-/* Responsive Fallback: If container size drops below 280px wide, wrap into 2 rows */
-@container (max-width: 280px) {
+/* Responsive Queries for Column Wrapping */
+@container (max-width: 450px) {
+  .countdown-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3cqw 2cqw;
+  }
+  .grid-item:nth-child(3) {
+    border-right: none;
+  }
+}
+
+@container (max-width: 250px) {
   .countdown-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 3cqw;
+    gap: 4cqw;
   }
-  .grid-item:nth-child(2) {
+  .grid-item {
     border-right: none;
   }
 }
