@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renaissance Countdown Widget</title>
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="responsive-wrapper">
+    <div class="countdown-card">
+      <div class="corner top-left">✦</div>
+      <div class="corner top-right">✦</div>
+      <div class="corner bottom-left">✦</div>
+      <div class="corner bottom-right">✦</div>
+      
+      <div class="card-content">
+        <!-- Target Event Title Label -->
+        <h1 id="event-title">THE NEW ERA</h1>
+        <div class="ornament">❖ ────── ❖</div>
+        
+        <!-- The Countdown Numeric Grid -->
+        <div class="countdown-grid">
+          <div class="grid-item">
+            <span id="days-val">000</span>
+            <label>DAYS</label>
+          </div>
+          <div class="grid-item">
+            <span id="hours-val">00</span>
+            <label>HOURS</label>
+          </div>
+          <div class="grid-item">
+            <span id="minutes-val">00</span>
+            <label>MINS</label>
+          </div>
+          <div class="grid-item">
+            <span id="seconds-val">00</span>
+            <label>SECS</label>
+          </div>
+        </div>
+        
+        <div class="ornament-small">❖</div>
+        <p id="renaissance-phrase">“The stars incline us, they do not bind us.”</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
